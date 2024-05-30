@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./App.css";
 import { debugData } from "../utils/debugData";
 import { fetchNui } from "../utils/fetchNui";
 
@@ -50,12 +49,14 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="nui-wrapper">
-      <div className="popup-thing">
-        <div>
-          <h1>This is the NUI Popup!</h1>
-          <p>Exit with the escape key</p>
-          <button onClick={handleGetClientData}>Get Client Data</button>
+    <div className="flex items-center justify-center h-screen">
+      <div className="p-5 rounded-lg bg-gray-600 text-white font-bold">
+        <div className="space-y-3">
+          <div>
+            <h1>This is the NUI Popup!</h1>
+            <p>Exit with the escape key</p>
+          </div>
+          <button className="px-3 py-2 mx-auto text-center bg-blue-700 rounded-lg" onClick={handleGetClientData}>Get Client Data</button>
           {clientData && <ReturnClientDataComp data={clientData} />}
         </div>
       </div>

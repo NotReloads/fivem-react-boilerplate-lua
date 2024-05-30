@@ -49,9 +49,7 @@ export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({
         setVisible,
       }}
     >
-      <div
-        style={{ visibility: visible ? "visible" : "hidden", height: "100%" }}
-      >
+      <div style={{ height: '100%' }} className={`transition-all transform ${!visible && 'translate-y-1 opacity-0'}`}>
         {children}
       </div>
     </VisibilityCtx.Provider>
